@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+    <h1>SCHEDULED APPOINTMENTS...</h1>
+
+    {% for i in data %}
+
+        SLNO: {{ i.id }} <br>
+        Doctor: {{ i.doctor }} <br>
+        Patient: {{ i.patient }} <br>
+        Date: {{ i.appoint_date }} <br>
+        Time: {{ i.appoint_time }} <br>
+
+        <a href="{% url 'update_appoint' i.id %}"><button>UPDATE</button></a>
+        <a href="{% url 'delete_appoint' i.id %}"><button>DELETE</button></a>
+      <br><br>
+    {% endfor %}
+
+    <br><br>
+
+    <a href="{% url 'create_appoint' %}"><button>BACK</button></a>
+
+  
+{% endblock content %}

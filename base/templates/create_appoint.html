@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+    <h1>BOOK APPOINMENTS FOR THE PATIENTS WITH THE AVAILABLE DOCTORS...</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table border="2">
+            {{ form.as_table }}
+        </table>
+        <button type="submit">SUBMIT</button>
+        <button type="reset">CLEAR</button>
+    </form>
+
+    <a href="{% url 'display_appoint' %}"><button>DISPLAY APPOINTMENTS</button></a>
+  
+{% endblock content %}

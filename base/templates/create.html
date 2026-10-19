@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <h1>Enter the details of Doctors to add in the database...</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <br><br>
+
+        <button type="submit">SUBMIT</button>
+        <button type="reset">CLEAR</button>
+    </form>
+    <br>
+    <a href="{% url 'read' %}"><button>DISPLAY DOCTORS</button></a>
+  
+{% endblock content %}

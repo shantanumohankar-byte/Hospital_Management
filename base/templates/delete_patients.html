@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <h1>Are you sure to delete the records of {{ data.pname }}??</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">YES</button>
+    </form>
+  <a href="{% url 'display_pat' %}"><button>NO</button></a>
+{% endblock content %}

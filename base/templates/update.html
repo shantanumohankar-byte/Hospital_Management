@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <h1>Update the details of the Doctor...</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit">SUBMIT</button>
+        <button type="reset">CLEAR</button>
+    </form>
+
+    <a href="{% url 'read' %}"><button>BACK</button></a>
+    
+{% endblock content %}

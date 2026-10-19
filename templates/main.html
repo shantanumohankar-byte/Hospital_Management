@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Hospital Management</title>
+</head>
+<body>
+
+    {% include 'nav.html' %}
+
+    <!-- to iterate in the passed messages and display all of them one by one -->
+    {% for i in messages %}
+      <section id="messages">
+        <p style="color: red;">{{ i }}</p>
+      </section>
+    {% endfor %}
+
+    <center>
+
+    <!-- to target the particular element and set the time for it to stop the operation -->
+    <script>
+        setTimeout(function() {
+            document.getElementById('messages').style.display = 'None'
+        }, 5000) <!-- Time shoud be given in milli seconds (1sec -> 1000 msec) -->
+    </script>
+
+    
+
+        {% block content %}
+          
+        {% endblock content %}
+
+    </center>
+    
+</body>
+</html>

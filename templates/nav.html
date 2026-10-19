@@ -1,0 +1,23 @@
+<nav>
+    <section id="logo"><h1>HOSPITAL MANAGEMENT</h1></section>
+    <section id="components">
+        <ul>
+            
+            {% if request.user.is_authenticated %}
+            
+            <li><a href="{% url 'create' %}">HOME</a></li>
+            <li><a href="{% url 'create_pat' %}">PATIENTS</a></li>
+            <li><a href="{% url 'create_appoint' %}">APPOINTMENTS</a></li>
+            <li><a href="{% url 'profile' %}">PROFILE</a></li>
+            <li><a href="{% url 'signout' %}">SIGNOUT</a></li>
+
+            {% else %}
+
+            <li><a href="{% url 'signup' %}">SIGNUP</a></li>
+            <li><a href="{% url 'signin' %}">SIGNIN</a></li>
+                
+            {% endif %}
+                
+        </ul>
+    </section>
+</nav>

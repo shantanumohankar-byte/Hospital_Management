@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>UPDATE THE PATIENTS DETAILS...</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table border="10">
+            {{ form.as_table }}
+        </table>
+        <button type="submit">SUBMIT</button>
+        <button type="reset">CLEAR</button>
+    </form>
+    <a href="{% url 'display_pat' %}"><button>BACK</button></a>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>ADD PATIENTS DETAILS...</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table border="10">
+            {{ form.as_table }}
+        </table>
+        <button type="submit">SUBMIT</button>
+        <button type="reset">CLEAR</button>
+    </form>
+{% endblock content %}

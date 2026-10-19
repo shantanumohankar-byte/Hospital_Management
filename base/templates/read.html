@@ -1,0 +1,37 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+    <h1>Details of all Doctors List:</h1>
+    {% for i in data %}
+        <ul>
+            <li>NAME: {{ i.dname }}</li> 
+            <li>PHNO: {{ i.dphno }}</li> 
+            <li>EMAIL: {{ i.demail }}</li> 
+            <li>SPECIALIZATION: {{ i.dspec }}</li> 
+            <li>AVAILABLE: {{ i.davail }}</li>
+
+            
+            {% if i.doc_pic %}
+
+                <img src="{{ i.doc_pic.url }}" width="150px" height="150px">
+                
+            {% endif %}
+
+            
+            {% if i.doc_intro %}
+
+                <video height="250px" width="250px" controls>
+                    <source src="{{ i.doc_intro.url }}" type="video/mp4">
+                </video>
+                
+            {% endif %}
+                
+                
+        </ul>
+        <a href="{% url 'update' i.id %}"><button>UPDATE</button></a>
+        <a href="{% url 'delete' i.id %}"><button>DELETE</button></a>
+      
+    {% endfor %}
+  
+{% endblock content %}

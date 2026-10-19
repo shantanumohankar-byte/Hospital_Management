@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>PATIENTS DETAILS...</h1>
+    {% for i in data %}
+        <p>NAME: {{ i.pname }}</p> 
+        <p>CONTACT: {{ i.pphno }}</p> 
+        <p>EMAIL: {{ i.pemail }}</p> 
+        <p>AGE: {{ i.page }}</p>
+
+        
+        {% if i.pat_pic %}
+        
+            <img src="{{ i.pat_pic.url }}" height="150px" width="150px">
+            
+        {% endif %}
+
+        
+        {% if i.pat_symp %}
+
+            <audio src="{{ i.pat_symp.url }}" controls></audio>
+            
+        {% endif %}
+            
+        <p>IMAGE: </p>
+        <p></p>
+
+
+        <a href="{% url 'update_pat' i.id %}"><button>UPDATE</button></a>
+        <a href="{% url 'delete_pat' i.id %}"><button>DELETE</button></a>
+        <br><br>
+    {% endfor %}
+<a href="{% url 'create_pat' %}"><button>BACK</button></a>
+{% endblock content %}

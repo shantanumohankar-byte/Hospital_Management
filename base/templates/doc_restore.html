@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+    <h1>Are you Sure to Restore  ??</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">YES</button>
+    </form>
+
+    <a href="{% url 'doc_history' %}"><button>NO</button></a>
+    
+{% endblock content %}
+    

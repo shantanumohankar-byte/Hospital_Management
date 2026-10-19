@@ -1,0 +1,35 @@
+Authentication: --> provides authentication of users (signup, signin)
+
+it is the process of authenticating the details of a particular user and providing the access to login in the web application
+
+step1: create an individual app to implement authentication
+step2: import the following things in views.py
+from django.contib.auth.models import User
+User --> built-in model to create and store the details of a user
+
+from django.contrib.auth import authenticate, login, logout, update_hash_session_auth
+
+authenticate --> checks the given data with the data existing in the database
+login --> performs login operation of a specific given user
+logout --> logs out the user from the active session of web application
+update_hash_session_auth --> used to update the password and login the user again, once a password of user is updated, it automatically logs out the user, and the updated password has to be hashed for security purpose.
+
+from django.contrib import messages
+messages --> it is a module / collection of functions  which lets us to display a small message after certain operation
+there are 5 functions available in messages:
+1. messages.success() --> when an operation is performed successfully
+2. messages.error() --> when an operation is failed
+3. messages.warning() --> to provide warning
+4. messages.info() --> to provide an information
+5. messages.alert() --> to alert the user regarding an operation
+
+copy the codes from the following files:
+1. signup.html
+2. signin.html
+
+authen.views.py
+only the functions which are developed.
+
+the project has been already shared, write and come on Monday.
+
+chalo, tata bye bye, goodbye, gaya...

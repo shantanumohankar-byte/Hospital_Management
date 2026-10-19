@@ -1,0 +1,24 @@
+nav{
+    height: 100px;
+    width: 100%;
+    background-color: paleturquoise;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    height: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#components ul{
+    height: 100px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
